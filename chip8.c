@@ -128,9 +128,6 @@ void emulate_cycle(chip8 *chip) {
 	Y = (opcode & 0x00F0) >> 4;
 	NN = opcode & 0x00FF;
 
-	// debug statement displaying opcode
-	// printf("Opcode: %x\n", opcode);
-
 	// decode and execute opcode in giant opcode switch statement
 	switch (opcode & 0xF000) {
 		case 0x0000:
@@ -393,15 +390,4 @@ void emulate_cycle(chip8 *chip) {
 
 	// increment program counter if there is no memory address jump
 	if (!jump) { chip->pctr += 2; }
-}
-
-// for debugging purposes only
-void draw_screen(chip8 *chip) {
-	int i, j;
-	for (i = 0; i < SCREEN_HEIGHT; i++) {
-		for (j = 0; j < SCREEN_WIDTH; j++) {
-			printf("%d", chip->display[j][i]);
-		}
-		printf("\n");
-	}
 }

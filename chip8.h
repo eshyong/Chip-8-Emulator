@@ -2,21 +2,21 @@
 #ifndef CHIP8_H
 #define CHIP8_H
 
-#define FONTSET_SIZE 80
-#define MAX_FILE_SIZE 3584
-#define NUM_KEYS 16
-#define NUM_REGISTERS 16
-#define SCREEN_WIDTH 64
-#define SCREEN_HEIGHT 32
-#define SPRITE_WIDTH 8
-#define STACK_SIZE 16
-#define SYSTEM_MEMORY 4096
-#define F 15
+#define FONTSET_SIZE	80
+#define MAX_FILE_SIZE	3584
+#define NUM_KEYS		16
+#define NUM_REGISTERS	16
+#define SCREEN_WIDTH	64
+#define SCREEN_HEIGHT	32
+#define SPRITE_WIDTH	8
+#define STACK_SIZE		16
+#define SYSTEM_MEMORY	4096
+#define F				15
 
 // since C doesn't handle bool, typedef our own
 typedef int bool;
-#define FALSE 0
-#define TRUE 1
+#define FALSE	0
+#define TRUE	1
 
 /*	SUMMARY:
 *	Chip 8 Virtual Machine. Can run Pong.
@@ -53,8 +53,6 @@ typedef struct chip8 {
 extern void initialize(chip8 *chip);
 
 extern void emulate_cycle(chip8 *chip);
-
-extern void draw_screen(chip8 *chip);
 
 extern void handle_input(chip8 *chip, unsigned char key);
 
