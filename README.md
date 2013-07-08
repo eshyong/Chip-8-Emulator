@@ -12,20 +12,23 @@ How to Write an Emulator (Chip-8 Interpreter) by Laurence Muller
 http://www.multigesture.net/articles/how-to-write-an-emulator-chip-8-interpreter/
 
 Key mapping is based on hexadecimal keypad:
-|1|2|3|C|	=>	|1|2|3|4|
-|4|5|6|D|	=>	|Q|W|E|R|
-|7|8|9|E|	=>	|A|S|D|F|
-|A|0|B|F|	=>	|Z|X|C|V|
 
-For Tetris:
-4 -> ROTATE
-5 -> LEFT
-6 -> RIGHT
+	|1|2|3|C|	=>	|1|2|3|4|
+	|4|5|6|D|	=>	|Q|W|E|R|
+	|7|8|9|E|	=>	|A|S|D|F|
+	|A|0|B|F|	=>	|Z|X|C|V|
+
+Tetris:
+
+	4 -> ROTATE
+	5 -> LEFT
+	6 -> RIGHT
 
 Pong:
-Q -> P1 UP
-1 -> P1 DOWN
-4 -> P2 UP
-R -> P2 DOWN
 
-TODO: change gameplay speed
+	Q -> P1 UP
+	1 -> P1 DOWN
+	4 -> P2 UP
+	R -> P2 DOWN
+
+<i>TODO: change gameplay speed to be more playable</i>
