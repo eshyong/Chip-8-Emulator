@@ -31,4 +31,7 @@ Pong:
 	4 -> P2 UP
 	R -> P2 DOWN
 
-<i>TODO: change gameplay speed to be more playable</i>
+<i>TODO:</i>
+* change gameplay speed to be more playable
+* add header file support for Win/Linux
+* add makefiles for Win/Linux
