@@ -67,39 +67,6 @@ int main(int argc, char *argv[]) {
 	// main loop, all events processed here
 	glutMainLoop();
 
-	// // TODO: delete debugging loop
-	// char c;
-	// int i, j = 0;
-	// initialize(&chip);
-
-	// for (i = 0; i < 1000; i++) {
-	// 	emulate_cycle(&chip);
-	// }
-
-	// while (c != 'x') {
-	// 	scanf("%c", &c);
-	// 	if (c == '\n') {
-	// 		emulate_cycle(&chip);
-	// 		for (i = 0; i < NUM_REGISTERS; i++) {
-	// 			printf("V%x: %d\n", i, chip.V[i]);
-	// 		}
-	// 		if (chip.draw_flag) {
-	// 			draw_screen(&chip);
-	// 		}
-	// 		printf("I: %d\n", chip.I);
-	// 		for (i = 0; i < 6; i++) {
-	// 			printf("I + %d: %d\n", i, chip.memory[chip.I + i]);
-	// 		}
-	// 		printf("Stack pointer: %d\n", chip.sptr);
-	// 		printf("Stack[%d]: %x\n", chip.sptr, chip.stack[chip.sptr]);
-	// 		printf("Program counter: %x\n", chip.pctr);
-	// 		printf("Keys pressed: %c\n", chip.key);
-	// 		j++;
-	// 	}
-	// }
-
-	// printf("Instructions executed: %d\n", j);
-
 	return 0;
 }
 
@@ -139,25 +106,25 @@ void handle_key_press(unsigned char key, int x, int y) {
 			input = 0x000C;
 			break;
 		case 'q':
-			input = 0x0000;
-			break;
-		case 'w':
 			input = 0x0004;
 			break;
+		case 'w':
+			input = 0x0005;
+			break;
 		case 'e':
-			input = 0x0000;
+			input = 0x0006;
 			break;
 		case 'r':
 			input = 0x000D;
 			break;
 		case 'a':
-			input = 0x0005;
-			break;
-		case 's':
 			input = 0x0007;
 			break;
+		case 's':
+			input = 0x0008;
+			break;
 		case 'd':
-			input = 0x0006;
+			input = 0x0009;
 			break;
 		case 'f':
 			input = 0x000E;

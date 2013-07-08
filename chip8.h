@@ -22,9 +22,6 @@ typedef int bool;
 *	Chip 8 Virtual Machine. Can run Pong.
 */
 typedef struct chip8 {
-	// draw flag: tells CPU whether or not to draw
-	bool draw_flag;
-
 	// total system memory: 4 KB in total
 	unsigned char memory[SYSTEM_MEMORY];
 

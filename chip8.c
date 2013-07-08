@@ -52,9 +52,6 @@ void initialize(chip8 *chip) {
 	chip->delay_timer = 0;
 	chip->sound_timer = 0;
 
-	// set draw flag to false
-	chip->draw_flag = FALSE;
-
 	// set key to 0, or NULL
 	chip->key = 0;
 
@@ -130,9 +127,6 @@ void emulate_cycle(chip8 *chip) {
 	X = (opcode & 0x0F00) >> 8;
 	Y = (opcode & 0x00F0) >> 4;
 	NN = opcode & 0x00FF;
-	
-	// set draw flag to false
-	chip->draw_flag = FALSE;
 
 	// debug statement displaying opcode
 	// printf("Opcode: %x\n", opcode);
@@ -319,9 +313,6 @@ void emulate_cycle(chip8 *chip) {
 				x_coord = chip->V[X];
 				y_coord = chip->V[Y];
 			}
-
-			// set draw flag to true
-			chip->draw_flag = TRUE;
 			break;
 		}
 		case 0xE000:
