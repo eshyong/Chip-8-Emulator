@@ -55,8 +55,30 @@ void initialize(chip8 *chip) {
 	// set key to 0, or NULL
 	chip->key = 0;
 
+	// allow user to pick game
+	char *file_name;
+	char c;
+	int loop = 1;
+
+	printf("Please select a game from the list.\n1.TETRIS\n2.PONG\n");
+	scanf("%c", &c);
+
+	while (loop) {
+		switch (c) {
+			case '1':
+				file_name = "TETRIS.bin";
+				loop = 0;
+				break;
+			case '2':
+				file_name = "PONG.bin";
+				loop = 0;
+				break;
+			default:
+				break;
+		}
+	}
+
 	// load program into memory
-	char *file_name = "TETRIS.bin";
 	if (load_file(file_name, chip->memory + 512) < 0) { exit(0); }
 }
 
