@@ -60,7 +60,7 @@ void initialize(chip8 *chip) {
 	char c;
 	int loop = 1;
 
-	printf("Please select a game from the list.\n1.TETRIS\n2.PONG\n");
+	printf("Please select a game from the list (enter a number).\n1.TETRIS\n2.PONG\n3.EXIT\n");
 	scanf("%c", &c);
 
 	while (loop) {
@@ -73,6 +73,9 @@ void initialize(chip8 *chip) {
 				file_name = "PONG.bin";
 				loop = 0;
 				break;
+			case '3':
+				printf("Exiting emulator...\n");
+				exit(0);
 			default:
 				break;
 		}
@@ -94,7 +97,6 @@ int load_file(char *file_name, unsigned char *buffer) {
 	int file_size;
 
 	// open file stream in binary read-only mode
-	// return error if file is too large or cannot be found
 	file = fopen(file_name, "rb");
 	if (file == NULL) { printf("File not found.\n"); return -1; }
 	else {
@@ -104,7 +106,9 @@ int load_file(char *file_name, unsigned char *buffer) {
 		printf("ROM size: %d\n", file_size);
 		rewind(file);
 
+		// return error if file is too large or cannot be found
 		if (file_size > MAX_FILE_SIZE) { printf("File is too large to load.\n"); return -1; }
+
 		// read program into memory
 		fread(buffer, 1, file_size, file);
 		return 0;

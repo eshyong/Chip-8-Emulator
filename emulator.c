@@ -53,16 +53,16 @@ int main(int argc, char *argv[]) {
 
 	// initialize orthographic 2D view, among other things
 	initGL();
+	 
+	// handle key presses and releases
+	glutKeyboardFunc(handle_key_press);
+	glutKeyboardUpFunc(handle_key_release);
 
 	// GLUT draw function
 	glutDisplayFunc(render);
 
 	// GLUT idle function, causes screen to redraw
 	glutIdleFunc(idle);
-
-	// handles key presses and releases
-	glutKeyboardFunc(handle_key_press);
-	glutKeyboardUpFunc(handle_key_release);
 
 	// main loop, all events processed here
 	glutMainLoop();
